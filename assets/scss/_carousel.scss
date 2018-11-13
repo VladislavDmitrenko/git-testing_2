@@ -1,0 +1,146 @@
+.fragment {
+    position: relative;
+
+    width: 100%;
+    padding: $gutter;
+
+    background-color: $light-color;
+
+    order: 1;
+}
+
+.fragment-slides {
+    position: relative;
+}
+
+.fragment-slide {
+    position: absolute;
+    top: 0;
+
+    display: flex;
+
+    transition: opacity 0.5s;
+
+    opacity: 0;
+    border: 7px solid #ffffff;
+    background-image: url(../img/carousel-item-bg.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    box-shadow: 0 0 1px darken($light-color, 7%);
+
+    @media (max-width: $small) {
+        flex-wrap: wrap;
+    }
+
+    &.active {
+        position: relative;
+        z-index: 1;
+
+        opacity: 1;
+    }
+}
+
+.fragment-slide_image {
+    display: flex;
+
+    padding: $gutter;
+
+    align-items: center;
+
+    @media (min-width: $large + 1) {
+        flex: 0 0 250px;
+    }
+
+    @media (max-width: $large) and (min-width: $small + 1) {
+        flex: 0 0 220px;
+    }
+
+    @media (max-width: $small) {
+        flex: 1 0 100%;
+
+        justify-content: center;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.fragment-slide_text {
+    @media (min-width: $small + 1) {
+        padding: $gutter $gutter*2 $gutter $gutter;
+
+        flex-grow: 1;
+    }
+
+    @media (max-width: $small) {
+        flex: 1 0 100%;
+
+        padding: 0 $gutter $gutter $gutter;
+    }
+
+    h3 {
+        text-transform: uppercase;
+
+        color: #ffffff;
+
+        @media (min-width: $small + 1) {
+            margin: $gutter 0;
+
+            flex-grow: 1;
+        }
+
+        @media (max-width: $small) {
+            overflow: hidden;
+            flex: 1 0 100%;
+
+            max-width: calc(100vw - 135px);
+            margin: 0 0 $gutter 0;
+
+            text-align: center;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    p {
+        color: #ffffff;
+
+        @include block-with-text;
+
+        @media (min-width: $small + 1) {
+            margin-bottom: $gutter;
+
+            text-align: justify;
+
+            flex-grow: 1;
+        }
+
+        @media (max-width: $small) {
+            margin: 0 0 $gutter 0;
+            margin-bottom: 0;
+
+            text-align: center;
+        }
+    }
+}
+
+.fragment-controls {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+
+    img {
+        margin-top: -$gutter;
+    }
+
+    &.prev {
+        left: 3px;
+    }
+
+    &.next {
+        right: 3px;
+
+        transform: scale(-1, 1);
+    }
+}
