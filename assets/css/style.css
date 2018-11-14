@@ -812,9 +812,9 @@ li {
   flex: 0 0 55px; 
 }
 .twitter_description {
+  flex: 1 0 100px; 
   -webkit-box-flex: 1;
   -ms-flex: 1 0 100px;
-  flex: 1 0 100px; 
 }
 .twitter_description-title {
   display: block;
@@ -974,7 +974,7 @@ li {
     display: -ms-flexbox;
     display: flex; 
   }
-  .footer .menu_list {
+  .footer .menu-button_item {
     top: initial;
     bottom: 100%; 
   }  
